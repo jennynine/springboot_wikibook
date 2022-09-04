@@ -35,4 +35,16 @@
          updateProduct = productRepository.save(product);
          
          
-         
+# 7장 테스트 
+(부가 설명: 테스트에 대한 예가 상세함)
+- JUNIT 5의 소개: JUnit Platform, JUnit Jupiter, JUnit Vintage으로 구성
+- 테스트코드 작성 방법: Given-When-Then 패턴
+- 좋은 테스트를 작성하는 5가지 속성(F.I.R.S.T)
+- 테스트 
+ . 컨트롤러 : 웹에 가까운 모듈. @WebMvcTest, @MocBen @Test @DisplayName.
+ . 서비스 : Mockito verify, beforeach, .. @Mockbean 등 이용 
+ . 리포지토리 : 기존 db 대신 h2DB 등을 이용해 given-when-then 패턴으로 작성
+ . 코드 커버리지: JaCoCo- java code coverage: JUnit 테스트를 통해 애플리케이션 코드가 얼마나 테스트됐는지 Line과 branch를 기준으로 한 커버리지 리포트
+ 
+ . JaCoCo: 테스트 커버리지 관리 
+ . 현업에서는 Jacoco와 SonarQube의 솔루션으로 연동

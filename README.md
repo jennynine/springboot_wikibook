@@ -20,29 +20,4 @@
  
  - [예스24](http://www.yes24.com/Product/Goods/110142898)
 
-4장 - talend api tester 사용법 소개
-6장 - 데이타베이스 연동
- - 엔티티 관련 기본 어노테이션: 
-   @Entity
-   @Table
-   @Id, @GeneratedValue - AUTO, IDENTITY, SEQUENCE, TABLE
-   @Column
-   @Transient
-   
-  - 스프링에서 관리하는 빈으로 등록
-  @Component 또는 @Service
 
-
--getById()와 findById()의 차이  
- data/dao/impl/ProductDaOImpl.java
-. getById(): em의 getReference()메소들 호출하면서 프락시 객체를 리턴. 실제 쿼리는 프락시 객체를 통해 최초로 접근되는 시점에 실행. 없으면 EntityNotFoundException,dmf qkftod
-   예) Product selectProduct = productRepository.getById(number);
-   
-. findById(): 영속성 컨텍스트의 캐시에서 값을 조회하고 없으면 실제 데이타베이스에서 조회. 리턴 값으로 Optional 객체를 전달. IsPresent()를 이용해서 얻은 후에 get
-   예) Optional<Product> selectProduct=productRepository.findById(number);
-      if(selecProduct.isPresent())
-         Product product = selectProduct.get();
-         .. 
-         product.setName(name);
-         .. 
-         updateProduct = productRepository.save(product);
